@@ -30,6 +30,9 @@
     <string name="timeFormat">00:00:00</string>
     <string name="date">Fecha</string>
     <string name="dateFormat">DD/MM/AAAA</string>
+    <string name="btnCreate">Crear</string>
+
+    <string name="txtShowUser">Creado por: </string>
     <string name="btnJoin">Unirse</string>
 
     <!-- TODO: Remove or change this placeholder text -->
