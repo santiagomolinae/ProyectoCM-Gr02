@@ -35,6 +35,16 @@
     <string name="txtShowUser">Creado por: </string>
     <string name="btnJoin">Unirse</string>
 
+    <string name="txtFriendName">Nombre de amigo</string>
+    <string name="btnRateFriend">Calificar</string>
+
+    <string name="txtNumFriends">Núm de amigos</string>
+    <string name="txtNumEvents">Núm de eventos</string>
+    <string name="txtRateProfile">Calificación</string>
+
+    <string name="txtMyEvents">Mis eventos</string>
+    <string name="txtJoinEvents">Eventos unidos</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
