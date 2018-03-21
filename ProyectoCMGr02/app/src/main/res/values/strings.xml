@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ProyectoCM-Gr02</string>
+    <string name="title_activity_sing_in">SingInActivity</string>
+    <string name="btnSignInGoogle">Iniciar sesión con Google</string>
+    <string name="txtRegistrate">¿No tienes cuenta? Regístrate</string>
+    <string name="txtUserName">Nombre de usuario</string>
+    <string name="txtUserPassword">Contraseña</string>
+    <string name="btnSignUp">Registrarse</string>
+</resources>
