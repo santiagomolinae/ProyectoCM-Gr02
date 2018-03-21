@@ -6,4 +6,32 @@
     <string name="txtUserName">Nombre de usuario</string>
     <string name="txtUserPassword">Contraseña</string>
     <string name="btnSignUp">Registrarse</string>
+    <string name="txtBikePartner">BIKE PARTNER</string>
+    <string name="title_activity_nd">NDActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="itemND_Perfil">Perfil</string>
+    <string name="itemND_Amigos">Amigos</string>
+    <string name="itemND_MisEventos">Mis Eventos</string>
+    <string name="itemND_EventosUnidos">Eventos unidos</string>
+    <string name="itemND_Ajustes">Ajustes</string>
+
+
+    <string name="action_settings">Settings</string>
+
+    <string name="CV_Event">Evento</string>
+    <string name="CV_EventFrom">Desde: </string>
+    <string name="CV_EventTo">Hasta: </string>
+    <string name="CV_EventDate">Fecha: </string>
+    <string name="CV_Unete">¡Únete!</string>
+
+    <string name="time">Hora</string>
+    <string name="timeFormat">00:00:00</string>
+    <string name="date">Fecha</string>
+    <string name="dateFormat">DD/MM/AAAA</string>
+    <string name="btnJoin">Unirse</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
