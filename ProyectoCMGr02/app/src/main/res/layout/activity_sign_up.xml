@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context="co.edu.udea.compumovil.proyectocm_gr02_20181.SignUpActivity">
 
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="32dp"
+        android:backgroundTint="@android:color/holo_blue_dark"
+        android:text="@string/btnSignInGoogle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegister"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="111dp"
@@ -21,7 +34,7 @@
         tools:layout_editor_absoluteY="147dp" />
 
     <EditText
-        android:id="@+id/txtUserName"
+        android:id="@+id/txtUserEmail"
         android:layout_width="213dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -57,12 +70,10 @@
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
+        android:layout_marginBottom="60dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
         android:backgroundTint="@android:color/holo_blue_dark"
         android:text="@string/btnSignUp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>

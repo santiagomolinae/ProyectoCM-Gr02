@@ -3,7 +3,7 @@
     <string name="title_activity_sing_in">SingInActivity</string>
     <string name="btnSignInGoogle">Iniciar sesión con Google</string>
     <string name="txtRegistrate">¿No tienes cuenta? Regístrate</string>
-    <string name="txtUserName">Nombre de usuario</string>
+    <string name="txtUserName">Email</string>
     <string name="txtUserPassword">Contraseña</string>
     <string name="btnSignUp">Registrarse</string>
     <string name="txtBikePartner">BIKE PARTNER</string>
