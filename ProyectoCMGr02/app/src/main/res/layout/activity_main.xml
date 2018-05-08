@@ -31,6 +31,7 @@
     <TextView
         android:id="@+id/field_user_name"
         android:layout_width="match_parent"
-        android:text="Username: " />
+        android:text="Username: "
+        android:layout_height="50dp"/>
 
 </android.support.constraint.ConstraintLayout>

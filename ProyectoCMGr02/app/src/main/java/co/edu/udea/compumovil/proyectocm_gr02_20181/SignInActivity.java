@@ -88,8 +88,13 @@ public class SignInActivity extends AppCompatActivity implements GoogleApiClient
     private void startMainActivity(FirebaseUser user){
 
         if(user != null) {
-            Intent intent = new Intent(this, MainActivity.class);
+            // cambiar
+            /*Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);*/
+
+            Intent intent = new Intent(this, NDActivity.class);
             startActivity(intent);
+
         }
 
     }

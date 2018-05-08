@@ -4,9 +4,23 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 
 /**
@@ -17,7 +31,7 @@ import android.view.ViewGroup;
  * Use the {@link CreateEventFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CreateEventFragment extends Fragment {
+public class CreateEventFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -26,6 +40,14 @@ public class CreateEventFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private EditText input_event , input_from , input_to;
+    private RecyclerView cardViewList;
+    private List<Event> list_events = new ArrayList<>();
+
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference mDatabaseReference;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -64,7 +86,50 @@ public class CreateEventFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_event, container, false);
+        View view = inflater.inflate(R.layout.fragment_create_event, container, false);
+        Button btnCreateEvent = (Button)view.findViewById(R.id.btnCreate);
+        btnCreateEvent.setOnClickListener(this);
+
+        input_from = (EditText) view.findViewById(R.id.txtCreateFrom);
+        input_to = (EditText) view.findViewById(R.id.txtCreateTo);
+
+        cardViewList = (RecyclerView)view.findViewById(R.id.RecyclerPrincipalPage) ;
+
+
+        //firebase
+        initFirebase();
+        addEventFirebaseListener();
+
+        return  view;
+    }
+
+    private void addEventFirebaseListener() {
+        mDatabaseReference.child("events").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (list_events.size() > 0)
+                    list_events.clear();
+                for (DataSnapshot postSnapshot:dataSnapshot.getChildren()){
+                    Event event = postSnapshot.getValue(Event.class);
+                    list_events.add(event);
+                }
+                //AdapterEvents adapter = new AdapterEvents(CreateEventFragment.this,list_events);
+                //cardViewList.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+    }
+
+    private void initFirebase() {
+        FirebaseApp.initializeApp(this.getContext());
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        mDatabaseReference = mFirebaseDatabase.getReference();
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -74,7 +139,7 @@ public class CreateEventFragment extends Fragment {
         }
     }
 
-    @Override
+   /* @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof OnFragmentInteractionListener) {
@@ -83,7 +148,7 @@ public class CreateEventFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-    }
+    }*/
 
     @Override
     public void onDetach() {
@@ -105,4 +170,19 @@ public class CreateEventFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    public void onClick(View v){
+
+        switch (v.getId()){
+            case R.id.btnCreate:
+                Event event = new Event(UUID.randomUUID().toString()
+                        ,input_from.getText().toString(),input_to.getText().toString(), "Santiago");
+
+                mDatabaseReference.child("events").child(event.getUid()).setValue(event);
+                break;
+        }
+
+    }
+
+
 }

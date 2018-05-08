@@ -1,9 +1,11 @@
+package co.edu.udea.compumovil.proyectocm_gr02_20181;
+
 /**
  * Created by personal on 7/05/18.
  */
 
 public class Event {
-    private String uid , origen , destino , hora , usuario;
+    private String uid , origen , destino , usuario;
 
     public Event(){
 
@@ -33,13 +35,6 @@ public class Event {
         this.destino = destino;
     }
 
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
 
     public String getUsuario() {
         return usuario;
@@ -49,11 +44,10 @@ public class Event {
         this.usuario = usuario;
     }
 
-    public Event (String uid , String origen , String  destino , String hora , String usuario){
-        this.uid = uid;
+    public Event (String uid , String origen , String  destino , String usuario){
+        this.uid = uid; // primary key
         this.origen = origen;
         this.destino = destino;
-        this.hora = hora;
         this.usuario = usuario;
     }
 
