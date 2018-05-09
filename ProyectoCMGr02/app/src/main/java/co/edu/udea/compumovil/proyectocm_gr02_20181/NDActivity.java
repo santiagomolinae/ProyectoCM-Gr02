@@ -95,6 +95,11 @@ public class NDActivity extends AppCompatActivity
         } else if (id == R.id.nav_friends) {
 
         } else if (id == R.id.nav_misEventos) {
+            fragment = new PrincipalPageFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container,fragment)
+                    .commit();
 
         } else if (id == R.id.nav_eventosUnidos) {
 

@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -89,20 +91,37 @@ public class PrincipalPageFragment extends Fragment {
     @Override
     public  void onStart(){
         super.onStart();
-        FirebaseRecyclerAdapter <Event,EventViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Event,EventViewHolder>
+        FirebaseRecyclerAdapter<Event,EventViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<Event,EventViewHolder>
                 (Event.class,R.layout.cardview_events,EventViewHolder.class,mreference){
 
             @Override
             public  void populateViewHolder(EventViewHolder eventViewHolder,Event model ,int position){
+                eventViewHolder.setOrigen(model.getOrigen());
 
             }
         };
+
+        mRecyclerView.setAdapter(firebaseRecyclerAdapter);
     }
 
-    public static  class EventViewHolder extends RecyclerView.ViewHolder{
+    public static class EventViewHolder extends RecyclerView.ViewHolder{
+
         View mview;
+        public  EventViewHolder(View itemView){
+            super(itemView);
+            mview = itemView;
+        }
+
+        public void setOrigen(String origen){
+            TextView postOrigen = (TextView) itemView.findViewById(R.id.txtCV_EventFrom);
+            postOrigen.setText(origen);
+
+        }
+
 
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -133,4 +152,7 @@ public class PrincipalPageFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 }
+
+
