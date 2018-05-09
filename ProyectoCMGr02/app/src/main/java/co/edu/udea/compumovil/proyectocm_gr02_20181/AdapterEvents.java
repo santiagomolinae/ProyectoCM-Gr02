@@ -46,8 +46,8 @@ public class AdapterEvents extends BaseAdapter {
         inflater = (LayoutInflater)activity.getBaseContext()
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        View itemView = inflater.inflate(R.layout.fragment_cardview_eventos,null);
-
+       // falta organizar View itemView = inflater.inflate(R.layout.fragment_cardview_eventos,null);
+/*
         TextView txtEvent = (TextView)itemView.findViewById(R.id.txtCV_Event);
         TextView txtEventFrom = (TextView)itemView.findViewById(R.id.txtCV_EventFrom);
         TextView txtEventTo = (TextView)itemView.findViewById(R.id.txtCV_EventTo);
@@ -55,7 +55,7 @@ public class AdapterEvents extends BaseAdapter {
 
         txtEvent.setText(listEvent.get(i).getUid());
         txtEventFrom.setText(listEvent.get(i).getOrigen());
-        txtEventTo.setText(listEvent.get(i).getDestino());
+        txtEventTo.setText(listEvent.get(i).getDestino());*/
 
         return view;
 

@@ -51,6 +51,14 @@ public class Event {
         this.usuario = usuario;
     }
 
+    public Event (String uid , String origen , String  destino){
+        this.uid = uid; // primary key
+        this.origen = origen;
+        this.destino = destino;
+    }
+
+
+
 }
 
 
